@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Pairifier</string>
+    <string name="main_app_type_title">App Type</string>
+    <string name="main_sender">Sender</string>
+    <string name="main_receiver">Receiver</string>
+    <string name="main_permissions_title">Permissions still needed</string>
+    <string name="main_permissions_grant">Grant</string>
+    <string name="main_permission_notifications_title">Notifications</string>
+    <string name="main_permission_notifications_description">(Required for Receiver) This is needed for the notifications to be shown on the receiver side.</string>
+    <string name="main_permission_phone_state_title">Read Phone State</string>
+    <string name="main_permission_phone_state_description">(Required for Sender) This is needed so that the app receives phone events (Call events, Low battery etc.)</string>
+    <string name="main_permission_call_logs_title">Read Call Logs</string>
+    <string name="main_permission_call_logs_description">(Required for Sender) This is needed so that the number of the caller is included in the call event.</string>
+    <string name="main_permission_contacts_title">Read Contacts</string>
+    <string name="main_permission_contacts_description">(Optional for Sender) This is needed so that the name of the contact is included in the payload that the sender sends.</string>
+</resources>
