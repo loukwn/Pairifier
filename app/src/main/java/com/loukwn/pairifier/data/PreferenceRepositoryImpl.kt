@@ -2,7 +2,7 @@ package com.loukwn.pairifier.data
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import com.loukwn.pairifier.domain.PreferenceRepository
+import com.loukwn.pairifier.domain.repository.PreferenceRepository
 
 class PreferenceRepositoryImpl(
     private val sharedPreferences: SharedPreferences,

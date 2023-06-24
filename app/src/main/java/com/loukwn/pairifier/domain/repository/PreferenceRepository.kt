@@ -1,4 +1,4 @@
-package com.loukwn.pairifier.domain
+package com.loukwn.pairifier.domain.repository
 
 interface PreferenceRepository {
     fun isReceiver(): Boolean

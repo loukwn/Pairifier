@@ -9,8 +9,8 @@ import androidx.compose.runtime.Immutable
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jakewharton.processphoenix.ProcessPhoenix
-import com.loukwn.pairifier.domain.PreferenceRepository
+import com.loukwn.pairifier.domain.repository.PreferenceRepository
+import com.loukwn.pairifier.domain.usecase.SetupServicesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,6 +24,7 @@ import kotlinx.coroutines.launch
 class MainViewModel(
     private val context: Context,
     private val preferencesRepository: PreferenceRepository,
+    private val setupServicesUseCase: SetupServicesUseCase,
 ) : ViewModel() {
     private val _stateFlow: MutableStateFlow<UiModel?> = MutableStateFlow(null)
     val stateFlow: StateFlow<UiModel?> = _stateFlow
@@ -83,7 +84,8 @@ class MainViewModel(
     fun onAppTypeChanged(appType: AppType) {
         val isReceiver = appType == AppType.Receiver
         preferencesRepository.setIsReceiver(isReceiver = isReceiver)
-        ProcessPhoenix.triggerRebirth(context)
+        setupServicesUseCase(forReceiver = isReceiver)
+        refreshUi()
     }
 
     fun refreshUi() {

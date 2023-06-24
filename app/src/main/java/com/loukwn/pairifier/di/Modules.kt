@@ -5,8 +5,9 @@ import android.content.SharedPreferences
 import com.loukwn.pairifier.MainViewModel
 import com.loukwn.pairifier.data.PreferenceRepositoryImpl
 import com.loukwn.pairifier.data.SenderRepositoryImpl
-import com.loukwn.pairifier.domain.PreferenceRepository
-import com.loukwn.pairifier.domain.SenderRepository
+import com.loukwn.pairifier.domain.repository.PreferenceRepository
+import com.loukwn.pairifier.domain.repository.SenderRepository
+import com.loukwn.pairifier.domain.usecase.SetupServicesUseCase
 import com.loukwn.pairifier.services.BatteryCheckWorker
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -22,8 +23,9 @@ val appModule = module {
     }
     factory<PreferenceRepository> { PreferenceRepositoryImpl(get()) }
     factory<SenderRepository> { SenderRepositoryImpl() }
+    factory { SetupServicesUseCase(androidContext()) }
 
-    viewModel { MainViewModel(get(), get()) }
+    viewModel { MainViewModel(get(), get(), get()) }
 }
 
 val workerModule = module {

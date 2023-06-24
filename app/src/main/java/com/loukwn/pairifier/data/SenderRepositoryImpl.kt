@@ -5,8 +5,8 @@ import com.google.firebase.functions.HttpsCallableResult
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
 import com.loukwn.pairifier.util.Logger
-import com.loukwn.pairifier.domain.Event
-import com.loukwn.pairifier.domain.SenderRepository
+import com.loukwn.pairifier.domain.repository.Event
+import com.loukwn.pairifier.domain.repository.SenderRepository
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

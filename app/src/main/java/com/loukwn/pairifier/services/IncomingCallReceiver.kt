@@ -6,14 +6,11 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.ContactsContract
 import android.telephony.TelephonyManager
-import com.loukwn.pairifier.domain.Event
-import com.loukwn.pairifier.domain.PreferenceRepository
-import com.loukwn.pairifier.domain.SenderRepository
+import com.loukwn.pairifier.domain.repository.Event
+import com.loukwn.pairifier.domain.repository.PreferenceRepository
+import com.loukwn.pairifier.domain.repository.SenderRepository
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 class IncomingCallReceiver : BroadcastReceiver(), KoinComponent {
 

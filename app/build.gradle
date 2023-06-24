@@ -63,6 +63,5 @@ dependencies {
     implementation "io.insert-koin:koin-androidx-compose:3.4.0"
     implementation "io.insert-koin:koin-androidx-workmanager:3.4.0"
 
-    implementation "com.jakewharton:process-phoenix:2.1.2"
     implementation "androidx.work:work-runtime:2.8.1"
 }

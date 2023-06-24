@@ -6,9 +6,9 @@ import android.content.IntentFilter
 import android.os.BatteryManager
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import com.loukwn.pairifier.domain.Event
-import com.loukwn.pairifier.domain.PreferenceRepository
-import com.loukwn.pairifier.domain.SenderRepository
+import com.loukwn.pairifier.domain.repository.Event
+import com.loukwn.pairifier.domain.repository.PreferenceRepository
+import com.loukwn.pairifier.domain.repository.SenderRepository
 import com.loukwn.pairifier.util.Logger
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
