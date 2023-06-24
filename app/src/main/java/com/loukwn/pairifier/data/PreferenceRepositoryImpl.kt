@@ -1,6 +1,7 @@
 package com.loukwn.pairifier.data
 
 import android.content.SharedPreferences
+import androidx.core.content.edit
 import com.loukwn.pairifier.domain.PreferenceRepository
 
 class PreferenceRepositoryImpl(
@@ -9,9 +10,8 @@ class PreferenceRepositoryImpl(
     override fun isReceiver(): Boolean = sharedPreferences.getBoolean(KEY_IS_RECEIVER, false)
 
     override fun setIsReceiver(isReceiver: Boolean) {
-        with(sharedPreferences.edit()) {
+        sharedPreferences.edit {
             putBoolean(KEY_IS_RECEIVER, isReceiver)
-            apply()
         }
     }
 

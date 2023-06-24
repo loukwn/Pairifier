@@ -52,7 +52,7 @@ object PermissionManager {
 }
 
 class PermissionFragment : Fragment() {
-    val permissionActivityResultContract =
+    private val permissionActivityResultContract =
         ActivityResultContracts.RequestPermission()
 
     private var continuation: CancellableContinuation<PermissionManager.Result>? = null
@@ -64,7 +64,7 @@ class PermissionFragment : Fragment() {
         }
     }
 
-    val permissionResultLauncher =
+    private val permissionResultLauncher =
         registerForActivityResult(
             permissionActivityResultContract
         ) { granted ->

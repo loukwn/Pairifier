@@ -98,6 +98,7 @@ enum class PermissionModel(
     @StringRes val title: Int,
     @StringRes val description: Int,
 ) {
+    @SuppressLint("InlinedApi")  // We check about it previously
     Notification(
         id = Manifest.permission.POST_NOTIFICATIONS,
         title = R.string.main_permission_notifications_title,
