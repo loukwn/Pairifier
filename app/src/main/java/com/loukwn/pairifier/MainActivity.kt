@@ -19,6 +19,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Done
 import androidx.compose.material3.Button
@@ -107,10 +109,12 @@ private fun Screen(
     onAppTypeChanged: (AppType) -> Unit,
     onPermissionGrantClicked: (String) -> Unit,
 ) {
+    val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = 16.dp),
+            .padding(horizontal = 16.dp)
+            .verticalScroll(scrollState),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
@@ -133,7 +137,8 @@ fun ColumnScope.AppTypePart(
     onAppTypeChanged: (AppType) -> Unit,
 ) {
     Column(
-        modifier = Modifier.fillMaxWidth().weight(1f, fill = false),
+        modifier = Modifier
+            .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(stringResource(id = R.string.main_app_type_title), style = TextStyle(fontSize = 18.sp))
@@ -188,13 +193,13 @@ fun ColumnScope.AppTypePart(
 @Composable
 fun Separator() {
     Column {
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(32.dp))
         Box(
             modifier = Modifier
                 .size(40.dp, 1.dp)
                 .background(Color.LightGray)
         )
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(32.dp))
     }
 }
 
