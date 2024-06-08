@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
-
 package com.loukwn.pairifier
 
 import android.os.Bundle

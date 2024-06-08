@@ -1,0 +1,51 @@
+[versions]
+
+kotlin = "1.9.22"
+
+# This is used in conjuction to the Kotlin version above.
+# See: https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+compose-compiler = "1.5.10"
+
+android-gradle-plugin = "8.3.2"
+compose-bom = "2024.05.00"
+timber = "5.0.1"
+koin = "3.4.0"
+firebase-bom = "33.1.0"
+google-services = "4.4.2"
+work-runtime = "2.9.0"
+
+[libraries]
+
+# Compose
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+compose-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose-material3 = { module = "androidx.compose.material3:material3" }
+compose-foundation = { module = "androidx.compose.foundation:foundation" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+
+# Koin
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-androidx-workmanager = { module = "io.insert-koin:koin-androidx-workmanager", version.ref = "koin" }
+
+# Firebase
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
+firebase-functions = { module = "com.google.firebase:firebase-functions-ktx" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging-ktx" }
+
+# Other
+google-services = { module = "com.google.gms:google-services", version.ref = "google-services" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber"}
+androidx-work-runtime = { module = "androidx.work:work-runtime", version.ref = "work-runtime" }
+
+[bundles]
+compose = [ "compose-ui", "compose-material3", "compose-ui-tooling-preview", "compose-foundation" ]
+koin = [ "koin-android", "koin-androidx-compose", "koin-androidx-workmanager" ]
+firebase = [ "firebase-functions", "firebase-messaging" ]
+
+[plugins]
+
+android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
