@@ -55,5 +55,4 @@ dependencies {
 
     implementation(libs.bundles.koin)
     implementation(libs.androidx.work.runtime)
-    implementation(libs.timber)
 }

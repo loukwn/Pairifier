@@ -26,8 +26,8 @@ class MainViewModel(
     private val preferencesRepository: PreferenceRepository,
     private val setupServicesUseCase: SetupServicesUseCase,
 ) : ViewModel() {
-    private val _stateFlow: MutableStateFlow<UiModel?> = MutableStateFlow(null)
-    val stateFlow: StateFlow<UiModel?> = _stateFlow
+    private val _stateFlow: MutableStateFlow<MainUiModel?> = MutableStateFlow(null)
+    val stateFlow: StateFlow<MainUiModel?> = _stateFlow
 
     private val updateFlow = MutableSharedFlow<Unit>(1)
 
@@ -75,7 +75,7 @@ class MainViewModel(
                     model?.copy(
                         type = type,
                         permissionsNeeded = listPermissions
-                    ) ?: UiModel(type, listPermissions)
+                    ) ?: MainUiModel(type, listPermissions)
                 }
             }
         }
@@ -128,7 +128,7 @@ fun PermissionModel.granted(context: Context): Boolean {
 }
 
 @Immutable
-data class UiModel(
+data class MainUiModel(
     val type: AppType,
     val permissionsNeeded: List<PermissionModel>,
 )

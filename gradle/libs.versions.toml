@@ -8,7 +8,6 @@ compose-compiler = "1.5.10"
 
 android-gradle-plugin = "8.3.2"
 compose-bom = "2024.05.00"
-timber = "5.0.1"
 koin = "3.4.0"
 firebase-bom = "33.1.0"
 google-services = "4.4.2"
@@ -36,7 +35,6 @@ firebase-messaging = { module = "com.google.firebase:firebase-messaging-ktx" }
 
 # Other
 google-services = { module = "com.google.gms:google-services", version.ref = "google-services" }
-timber = { module = "com.jakewharton.timber:timber", version.ref = "timber"}
 androidx-work-runtime = { module = "androidx.work:work-runtime", version.ref = "work-runtime" }
 
 [bundles]
