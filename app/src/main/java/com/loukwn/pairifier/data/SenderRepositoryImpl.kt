@@ -14,12 +14,12 @@ import java.util.Locale
 class SenderRepositoryImpl : SenderRepository {
     override fun sendEvent(event: Event) {
         when (event) {
-            is Event.LowBattery -> handleLowBattery()
+            is Event.LowBattery -> handleLowBatteryEvent()
             is Event.PhoneCall -> handlePhoneCallEvent(event)
         }
     }
 
-    private fun handleLowBattery() {
+    private fun handleLowBatteryEvent() {
         callCloudFunction("lowBattery")
     }
 

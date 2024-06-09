@@ -24,9 +24,9 @@ class IncomingCallReceiver : BroadcastReceiver(), KoinComponent {
         val telephonyManager =
             context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
         val state = telephonyManager.callState
-        val phoneNumber = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER)
 
-        if (state == TelephonyManager.CALL_STATE_RINGING && phoneNumber != null) {
+        if (state == TelephonyManager.CALL_STATE_RINGING) {
+            val phoneNumber = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER) ?: return
             val contactName: String? =
                 getContactNameFromNumber(context = context, phoneNumber = phoneNumber)
 
