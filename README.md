@@ -1,5 +1,7 @@
 # Pairifier
 
+Article that accompanies the code: [here](https://medium.com/@loukwn/using-firebase-to-synchronize-call-events-between-two-devices-7bf06fe7ebed).
+
 Being an expat means there is a couple of things still tying you down to your place of origin. One of them is a phone number regularly used by family/friends who do not know your new phone number, government services, scam telephone centers etc. 
 
 I used to have a phone that supported dual sim but that is not the case anymore. So I figured that I can use this old device lying around for my secondary (old) phone number and just keep an eye on it for calls etc. This however proved quickly not that sustainable as it required more effort from me to keep checking it daily and many days I would just let the phone die out of battery and miss a couple of these events.
